@@ -527,3 +527,54 @@ Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to
 	at sun.security.provider.certpath.SunCertPathBuilder.engineBuild(Unknown Source)
 	at java.security.cert.CertPathBuilder.build(Unknown Source)
 	... 28 more
+
+!ENTRY com.ti.ccstudio.debug 1 0 2023-12-12 13:45:06.204
+!MESSAGE DS_ERROR: Cortex_M4_0: GEL: Encountered a problem loading file: C:\Workspace_IA_YAB_LSD\simple_peripheral_CC26X2R1_LAUNCHXL_tirtos_ccs\Release\simple_peripheral_CC26X2R1_LAUNCHXL_tirtos_ccs.out Could not open file
+
+
+!ENTRY com.ti.ccstudio.debug 1 0 2023-12-12 15:01:24.646
+!MESSAGE DS_ERROR: Cortex_M4_0: GEL: Encountered a problem loading file: C:\Workspace_IA_YAB_LSD\simple_peripheral_CC26X2R1_LAUNCHXL_tirtos_ccs\Release\simple_peripheral_CC26X2R1_LAUNCHXL_tirtos_ccs.out Could not open file
+
+
+!ENTRY com.ti.ccstudio.debug 1 0 2023-12-12 15:03:23.629
+!MESSAGE DS_ERROR: Cortex_M4_0: GEL: Encountered a problem loading file: C:\Workspace_IA_YAB_LSD\simple_peripheral_CC26X2R1_LAUNCHXL_tirtos_ccs\Release\simple_peripheral_CC26X2R1_LAUNCHXL_tirtos_ccs.out Could not open file
+
+
+!ENTRY org.eclipse.jface 2 0 2023-12-12 15:39:57.240
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2023-12-12 15:39:57.240
+!MESSAGE A conflict occurred for CTRL+SHIFT+C:
+Binding(CTRL+SHIFT+C,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.text.c.toggle.comment,Toggle Comment,
+		Toggle comment the selected lines,
+		Category(org.eclipse.cdt.ui.category.source,C/C++ Source,C/C++ Source Actions,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@3cb6238b,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(CTRL+SHIFT+C,
+	ParameterizedCommand(Command(org.eclipse.tm.terminal.copy,Copy,
+		,
+		Category(org.eclipse.tm.terminal.category1,Terminal view commands,Terminal view commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@45b64ab0,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.tm.terminal.EditContext,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2023-12-12 15:39:57.240
+!MESSAGE A conflict occurred for ALT+ARROW_UP:
+Binding(ALT+ARROW_UP,
+	ParameterizedCommand(Command(org.eclipse.tm.terminal.maximize,Maximize Active View or Editor,
+		,
+		Category(org.eclipse.tm.terminal.category1,Terminal view commands,Terminal view commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@1e881a54,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.tm.terminal.EditContext,,,system)
+Binding(ALT+ARROW_UP,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.moveLineUp,Move Lines Up,
+		Moves the selected lines up,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@14742579,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)

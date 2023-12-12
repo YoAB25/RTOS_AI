@@ -47,6 +47,17 @@ digraph Model
 
     // mod.$name=/ti/dpl/Settings
 
+    // mod.$name=/ti/drivers/ADC
+    CONFIG_ADC_0 -> ti_drivers_Power
+    CONFIG_ADC_0 -> ti_drivers_Board
+    CONFIG_ADC_1 -> ti_drivers_Power
+    CONFIG_ADC_1 -> ti_drivers_Board
+    CONFIG_ADC_2 -> ti_drivers_Power
+    CONFIG_ADC_2 -> ti_drivers_Board
+    CONFIG_ADC_0 -> CONFIG_PIN_0
+    CONFIG_ADC_1 -> CONFIG_PIN_1
+    CONFIG_ADC_2 -> CONFIG_PIN_2
+
     // mod.$name=/ti/drivers/AESCCM
     CONFIG_AESCCM0 -> ti_drivers_DMA
     CONFIG_AESCCM0 -> ti_drivers_Power
@@ -81,8 +92,8 @@ digraph Model
     // mod.$name=/ti/drivers/GPIO
     ti_drivers_GPIO -> ti_drivers_Power
     ti_drivers_GPIO -> ti_drivers_Board
-    CONFIG_GPIO_BTN1 -> CONFIG_PIN_BTN1
-    CONFIG_GPIO_BTN2 -> CONFIG_PIN_BTN2
+    SPI_LCD_CS -> CONFIG_PIN_BTN1
+    SPI_LCD_RS -> CONFIG_PIN_BTN2
 
     // mod.$name=/ti/drivers/NVS
     CONFIG_NVSINTERNAL -> ti_drivers_Board
@@ -101,6 +112,14 @@ digraph Model
     ti_drivers_RF -> ti_drivers_Board
 
     // mod.$name=/ti/drivers/RTOS
+
+    // mod.$name=/ti/drivers/SPI
+    CONFIG_SPI_0 -> ti_drivers_DMA
+    CONFIG_SPI_0 -> ti_drivers_Power
+    CONFIG_SPI_0 -> ti_drivers_Board
+    CONFIG_SPI_0 -> CONFIG_PIN_3
+    CONFIG_SPI_0 -> CONFIG_PIN_4
+    CONFIG_SPI_0 -> CONFIG_PIN_5
 
     // mod.$name=/ti/drivers/TRNG
     CONFIG_TRNG_0 -> ti_drivers_Power

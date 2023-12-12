@@ -74,6 +74,8 @@ icall_userCfg_t user0Cfg = BLE_USER_CFG;
 #endif // USE_DEFAULT_USER_CFG
 
 #include <ti/display/Display.h>
+#include <TacheADC/TacheADC.h>
+#include <TacheLCD/TacheLCD.h>
 
 /*******************************************************************************
  * MACROS
@@ -152,10 +154,11 @@ int main()
   NPITask_createTask(ICALL_SERVICE_CLASS_BLE);
 #endif // PTM_MODE
 
-  // SimplePeripheral_createTask();                                       Create Task function disabled
+  // SimplePeripheral_createTask();                                       // Create Task function disabled
 
   // Task ADC Call
   TacheADC_CreateTask();
+  TacheLCD_CreateTask();
 
   /* enable interrupts and start SYS/BIOS */
   BIOS_start();

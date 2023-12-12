@@ -39,6 +39,22 @@ extern "C" {
 
 
 /*
+ *  ======== ADC ========
+ */
+
+/* DIO25 */
+extern const uint_least8_t              CONFIG_ADC_0_CONST;
+#define CONFIG_ADC_0                    0
+/* DIO26 */
+extern const uint_least8_t              CONFIG_ADC_1_CONST;
+#define CONFIG_ADC_1                    1
+/* DIO27 */
+extern const uint_least8_t              CONFIG_ADC_2_CONST;
+#define CONFIG_ADC_2                    2
+#define CONFIG_TI_DRIVERS_ADC_COUNT     3
+
+
+/*
  *  ======== AESCCM ========
  */
 
@@ -87,12 +103,12 @@ extern const uint_least8_t              CONFIG_ECDH0_CONST;
  *  ======== GPIO ========
  */
 
-/* DIO13, LaunchPad Button BTN-1 (Left) */
-extern const uint_least8_t              CONFIG_GPIO_BTN1_CONST;
-#define CONFIG_GPIO_BTN1                0
-/* DIO14, LaunchPad Button BTN-2 (Right) */
-extern const uint_least8_t              CONFIG_GPIO_BTN2_CONST;
-#define CONFIG_GPIO_BTN2                1
+/* DIO13 */
+extern const uint_least8_t              SPI_LCD_CS_CONST;
+#define SPI_LCD_CS                      0
+/* DIO17 */
+extern const uint_least8_t              SPI_LCD_RS_CONST;
+#define SPI_LCD_RS                      1
 #define CONFIG_TI_DRIVERS_GPIO_COUNT    2
 
 /* LEDs are active high */
@@ -119,17 +135,43 @@ extern const uint_least8_t              CONFIG_NVSINTERNAL_CONST;
 
 extern const PIN_Config BoardGpioInitTable[];
 
+/* Parent Signal: CONFIG_ADC_0 ADC Pin, (DIO25) */
+#define CONFIG_PIN_0                   0x00000019
+/* Parent Signal: CONFIG_ADC_1 ADC Pin, (DIO26) */
+#define CONFIG_PIN_1                   0x0000001a
+/* Parent Signal: CONFIG_ADC_2 ADC Pin, (DIO27) */
+#define CONFIG_PIN_2                   0x0000001b
+/* Parent Signal: SPI_LCD_CS GPIO Pin, (DIO13) */
+#define CONFIG_PIN_BTN1                   0x0000000d
+/* Parent Signal: SPI_LCD_RS GPIO Pin, (DIO17) */
+#define CONFIG_PIN_BTN2                   0x00000011
+/* Parent Signal: CONFIG_SPI_0 SCLK, (DIO10) */
+#define CONFIG_PIN_3                   0x0000000a
+/* Parent Signal: CONFIG_SPI_0 MISO, (DIO8) */
+#define CONFIG_PIN_4                   0x00000008
+/* Parent Signal: CONFIG_SPI_0 MOSI, (DIO9) */
+#define CONFIG_PIN_5                   0x00000009
 /* XDS110 UART, Parent Signal: CONFIG_DISPLAY_UART TX, (DIO3) */
 #define CONFIG_PIN_UART_TX                   0x00000003
 /* XDS110 UART, Parent Signal: CONFIG_DISPLAY_UART RX, (DIO2) */
 #define CONFIG_PIN_UART_RX                   0x00000002
-/* LaunchPad Button BTN-1 (Left), Parent Signal: CONFIG_GPIO_BTN1 GPIO Pin, (DIO13) */
-#define CONFIG_PIN_BTN1                   0x0000000d
-/* LaunchPad Button BTN-2 (Right), Parent Signal: CONFIG_GPIO_BTN2 GPIO Pin, (DIO14) */
-#define CONFIG_PIN_BTN2                   0x0000000e
-#define CONFIG_TI_DRIVERS_PIN_COUNT    4
+#define CONFIG_TI_DRIVERS_PIN_COUNT    10
 
 
+
+
+/*
+ *  ======== SPI ========
+ */
+
+/*
+ *  MOSI: DIO9
+ *  MISO: DIO8
+ *  SCLK: DIO10
+ */
+extern const uint_least8_t              CONFIG_SPI_0_CONST;
+#define CONFIG_SPI_0                    0
+#define CONFIG_TI_DRIVERS_SPI_COUNT     1
 
 
 /*

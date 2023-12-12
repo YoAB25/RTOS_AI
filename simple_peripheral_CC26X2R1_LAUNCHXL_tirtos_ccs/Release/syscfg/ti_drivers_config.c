@@ -52,6 +52,88 @@ const Display_Config Display_config[CONFIG_Display_COUNT] = {
 const uint_least8_t Display_count = CONFIG_Display_COUNT;
 
 /*
+ *  =============================== ADC ===============================
+ */
+
+#include <ti/drivers/ADC.h>
+#include <ti/drivers/adc/ADCCC26XX.h>
+
+#define CONFIG_ADC_COUNT 3
+
+/*
+ *  ======== adcCC26xxObjects ========
+ */
+ADCCC26XX_Object adcCC26xxObjects[CONFIG_ADC_COUNT];
+
+/*
+ *  ======== adcCC26xxHWAttrs ========
+ */
+const ADCCC26XX_HWAttrs adcCC26xxHWAttrs[CONFIG_ADC_COUNT] = {
+    /* CONFIG_ADC_0 */
+    {
+        .adcDIO              = IOID_25,
+        .adcCompBInput       = ADC_COMPB_IN_AUXIO5,
+        .refSource           = ADCCC26XX_FIXED_REFERENCE,
+        .samplingDuration    = ADCCC26XX_SAMPLING_DURATION_2P7_US,
+        .inputScalingEnabled = true,
+        .refVoltage          = 3300000,
+        .triggerSource       = ADCCC26XX_TRIGGER_MANUAL,
+        .returnAdjustedVal   = false
+    },
+    /* CONFIG_ADC_1 */
+    {
+        .adcDIO              = IOID_26,
+        .adcCompBInput       = ADC_COMPB_IN_AUXIO4,
+        .refSource           = ADCCC26XX_FIXED_REFERENCE,
+        .samplingDuration    = ADCCC26XX_SAMPLING_DURATION_2P7_US,
+        .inputScalingEnabled = true,
+        .refVoltage          = 3300000,
+        .triggerSource       = ADCCC26XX_TRIGGER_MANUAL,
+        .returnAdjustedVal   = false
+    },
+    /* CONFIG_ADC_2 */
+    {
+        .adcDIO              = IOID_27,
+        .adcCompBInput       = ADC_COMPB_IN_AUXIO3,
+        .refSource           = ADCCC26XX_FIXED_REFERENCE,
+        .samplingDuration    = ADCCC26XX_SAMPLING_DURATION_2P7_US,
+        .inputScalingEnabled = true,
+        .refVoltage          = 3300000,
+        .triggerSource       = ADCCC26XX_TRIGGER_MANUAL,
+        .returnAdjustedVal   = false
+    },
+};
+
+/*
+ *  ======== ADC_config ========
+ */
+const ADC_Config ADC_config[CONFIG_ADC_COUNT] = {
+    /* CONFIG_ADC_0 */
+    {
+        .fxnTablePtr = &ADCCC26XX_fxnTable,
+        .object = &adcCC26xxObjects[CONFIG_ADC_0],
+        .hwAttrs = &adcCC26xxHWAttrs[CONFIG_ADC_0]
+    },
+    /* CONFIG_ADC_1 */
+    {
+        .fxnTablePtr = &ADCCC26XX_fxnTable,
+        .object = &adcCC26xxObjects[CONFIG_ADC_1],
+        .hwAttrs = &adcCC26xxHWAttrs[CONFIG_ADC_1]
+    },
+    /* CONFIG_ADC_2 */
+    {
+        .fxnTablePtr = &ADCCC26XX_fxnTable,
+        .object = &adcCC26xxObjects[CONFIG_ADC_2],
+        .hwAttrs = &adcCC26xxHWAttrs[CONFIG_ADC_2]
+    },
+};
+
+const uint_least8_t CONFIG_ADC_0_CONST = CONFIG_ADC_0;
+const uint_least8_t CONFIG_ADC_1_CONST = CONFIG_ADC_1;
+const uint_least8_t CONFIG_ADC_2_CONST = CONFIG_ADC_2;
+const uint_least8_t ADC_count = CONFIG_ADC_COUNT;
+
+/*
  *  =============================== AESCCM ===============================
  */
 
@@ -245,10 +327,10 @@ const uint_least8_t ECDH_count = CONFIG_ECDH_COUNT;
  *  Array of Pin configurations
  */
 GPIO_PinConfig gpioPinConfigs[] = {
-    /* CONFIG_GPIO_BTN1 : LaunchPad Button BTN-1 (Left) */
-    GPIOCC26XX_DIO_13 | GPIO_DO_NOT_CONFIG,
-    /* CONFIG_GPIO_BTN2 : LaunchPad Button BTN-2 (Right) */
-    GPIOCC26XX_DIO_14 | GPIO_DO_NOT_CONFIG,
+    /* SPI_LCD_CS */
+    GPIOCC26XX_DIO_13 | GPIO_CFG_OUT_STD | GPIO_CFG_OUT_STR_MED | GPIO_CFG_OUT_LOW,
+    /* SPI_LCD_RS */
+    GPIOCC26XX_DIO_17 | GPIO_CFG_OUT_STD | GPIO_CFG_OUT_STR_MED | GPIO_CFG_OUT_LOW,
 };
 
 /*
@@ -260,14 +342,14 @@ GPIO_PinConfig gpioPinConfigs[] = {
  *  (GPIO.optimizeCallbackTableSize = true)
  */
 GPIO_CallbackFxn gpioCallbackFunctions[] = {
-    /* CONFIG_GPIO_BTN1 : LaunchPad Button BTN-1 (Left) */
+    /* SPI_LCD_CS */
     NULL,
-    /* CONFIG_GPIO_BTN2 : LaunchPad Button BTN-2 (Right) */
+    /* SPI_LCD_RS */
     NULL,
 };
 
-const uint_least8_t CONFIG_GPIO_BTN1_CONST = CONFIG_GPIO_BTN1;
-const uint_least8_t CONFIG_GPIO_BTN2_CONST = CONFIG_GPIO_BTN2;
+const uint_least8_t SPI_LCD_CS_CONST = SPI_LCD_CS;
+const uint_least8_t SPI_LCD_RS_CONST = SPI_LCD_RS;
 
 /*
  *  ======== GPIOCC26XX_config ========
@@ -348,17 +430,29 @@ const uint_least8_t NVS_count = CONFIG_NVS_COUNT;
 #include <ti/drivers/PIN.h>
 #include <ti/drivers/pin/PINCC26XX.h>
 
-#define CONFIG_PIN_COUNT 4
+#define CONFIG_PIN_COUNT 10
 
 const PIN_Config BoardGpioInitTable[CONFIG_PIN_COUNT + 1] = {
+    /* Parent Signal: CONFIG_ADC_0 ADC Pin, (DIO25) */
+    CONFIG_PIN_0 | PIN_INPUT_EN | PIN_NOPULL | PIN_IRQ_DIS,
+    /* Parent Signal: CONFIG_ADC_1 ADC Pin, (DIO26) */
+    CONFIG_PIN_1 | PIN_INPUT_EN | PIN_NOPULL | PIN_IRQ_DIS,
+    /* Parent Signal: CONFIG_ADC_2 ADC Pin, (DIO27) */
+    CONFIG_PIN_2 | PIN_INPUT_EN | PIN_NOPULL | PIN_IRQ_DIS,
+    /* Parent Signal: SPI_LCD_CS GPIO Pin, (DIO13) */
+    CONFIG_PIN_BTN1 | PIN_GPIO_OUTPUT_EN | PIN_GPIO_LOW | PIN_PUSHPULL | PIN_DRVSTR_MED,
+    /* Parent Signal: SPI_LCD_RS GPIO Pin, (DIO17) */
+    CONFIG_PIN_BTN2 | PIN_GPIO_OUTPUT_EN | PIN_GPIO_LOW | PIN_PUSHPULL | PIN_DRVSTR_MED,
+    /* Parent Signal: CONFIG_SPI_0 SCLK, (DIO10) */
+    CONFIG_PIN_3 | PIN_GPIO_OUTPUT_EN | PIN_GPIO_LOW | PIN_PUSHPULL | PIN_DRVSTR_MED,
+    /* Parent Signal: CONFIG_SPI_0 MISO, (DIO8) */
+    CONFIG_PIN_4 | PIN_INPUT_EN | PIN_NOPULL | PIN_IRQ_DIS,
+    /* Parent Signal: CONFIG_SPI_0 MOSI, (DIO9) */
+    CONFIG_PIN_5 | PIN_GPIO_OUTPUT_EN | PIN_GPIO_LOW | PIN_PUSHPULL | PIN_DRVSTR_MED,
     /* XDS110 UART, Parent Signal: CONFIG_DISPLAY_UART TX, (DIO3) */
     CONFIG_PIN_UART_TX | PIN_GPIO_OUTPUT_EN | PIN_GPIO_HIGH | PIN_PUSHPULL | PIN_DRVSTR_MED,
     /* XDS110 UART, Parent Signal: CONFIG_DISPLAY_UART RX, (DIO2) */
     CONFIG_PIN_UART_RX | PIN_INPUT_EN | PIN_PULLDOWN | PIN_IRQ_DIS,
-    /* LaunchPad Button BTN-1 (Left), Parent Signal: CONFIG_GPIO_BTN1 GPIO Pin, (DIO13) */
-    CONFIG_PIN_BTN1 | PIN_INPUT_EN | PIN_PULLUP | PIN_IRQ_DIS,
-    /* LaunchPad Button BTN-2 (Right), Parent Signal: CONFIG_GPIO_BTN2 GPIO Pin, (DIO14) */
-    CONFIG_PIN_BTN2 | PIN_INPUT_EN | PIN_PULLUP | PIN_IRQ_DIS,
 
     PIN_TERMINATE
 };
@@ -405,6 +499,56 @@ const RFCC26XX_HWAttrsV2 RFCC26XX_hwAttrs = {
     .globalEventMask    = 0
 };
 
+
+/*
+ *  =============================== SPI DMA ===============================
+ */
+#include <ti/drivers/SPI.h>
+#include <ti/drivers/spi/SPICC26X2DMA.h>
+
+#define CONFIG_SPI_COUNT 1
+
+/*
+ *  ======== spiCC26X2DMAObjects ========
+ */
+SPICC26X2DMA_Object spiCC26X2DMAObjects[CONFIG_SPI_COUNT];
+
+/*
+ *  ======== spiCC26X2DMAHWAttrs ========
+ */
+const SPICC26X2DMA_HWAttrs spiCC26X2DMAHWAttrs[CONFIG_SPI_COUNT] = {
+    /* CONFIG_SPI_0 */
+    {
+        .baseAddr = SSI0_BASE,
+        .intNum = INT_SSI0_COMB,
+        .intPriority = (~0),
+        .swiPriority = 0,
+        .powerMngrId = PowerCC26XX_PERIPH_SSI0,
+        .defaultTxBufValue = ~0,
+        .rxChannelBitMask = 1<<UDMA_CHAN_SSI0_RX,
+        .txChannelBitMask = 1<<UDMA_CHAN_SSI0_TX,
+        .minDmaTransferSize = 10,
+        .mosiPin = IOID_9,
+        .misoPin = IOID_8,
+        .clkPin  = IOID_10,
+        .csnPin  = PIN_UNASSIGNED
+    },
+};
+
+/*
+ *  ======== SPI_config ========
+ */
+const SPI_Config SPI_config[CONFIG_SPI_COUNT] = {
+    /* CONFIG_SPI_0 */
+    {
+        .fxnTablePtr = &SPICC26X2DMA_fxnTable,
+        .object = &spiCC26X2DMAObjects[CONFIG_SPI_0],
+        .hwAttrs = &spiCC26X2DMAHWAttrs[CONFIG_SPI_0]
+    },
+};
+
+const uint_least8_t CONFIG_SPI_0_CONST = CONFIG_SPI_0;
+const uint_least8_t SPI_count = CONFIG_SPI_COUNT;
 
 /*
  *  =============================== TRNG ===============================
@@ -613,13 +757,13 @@ void Board_init(void)
     /* ==== /ti/drivers/Power initialization ==== */
     Power_init();
 
+    /* ==== /ti/devices/CCFGTemplate initialization ==== */
+
     /* ==== /ti/drivers/PIN initialization ==== */
     if (PIN_init(BoardGpioInitTable) != PIN_SUCCESS) {
         /* Error with PIN_init */
         while (1);
     }
-    /* ==== /ti/devices/CCFGTemplate initialization ==== */
-
     /* ==== /ti/drivers/RF initialization ==== */
 
 

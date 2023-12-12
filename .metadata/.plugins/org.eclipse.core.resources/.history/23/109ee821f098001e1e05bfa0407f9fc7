@@ -1,0 +1,12 @@
+#ifndef TACHEADC_H_
+#define TACHEADC_H_
+
+
+void TacheADC_CreateTask(void);
+
+void TacheADC_taskFxn(UArg a0, UArg a1);
+
+void myClockSwiFxn(uintptr_t arg0);
+
+
+# endif     // TACHEADC_H_

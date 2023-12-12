@@ -178,6 +178,8 @@ Startup/main.obj: C:/ti/simplelink_cc13x2_26x2_sdk_5_20_00_52/source/ti/devices/
 Startup/main.obj: C:/ti/simplelink_cc13x2_26x2_sdk_5_20_00_52/source/ti/ble5stack/icall/inc/ble_dispatch.h
 Startup/main.obj: syscfg/ti_drivers_config.h
 Startup/main.obj: C:/ti/simplelink_cc13x2_26x2_sdk_5_20_00_52/source/ti/drivers/PIN.h
+Startup/main.obj: C:/Workspace_IA_YAB_LSD/simple_peripheral_CC26X2R1_LAUNCHXL_tirtos_ccs/TacheADC/TacheADC.h
+Startup/main.obj: C:/Workspace_IA_YAB_LSD/simple_peripheral_CC26X2R1_LAUNCHXL_tirtos_ccs/TacheLCD/TacheLCD.h
 
 ../Startup/main.c:
 
@@ -534,4 +536,8 @@ C:/ti/simplelink_cc13x2_26x2_sdk_5_20_00_52/source/ti/ble5stack/icall/inc/ble_di
 syscfg/ti_drivers_config.h:
 
 C:/ti/simplelink_cc13x2_26x2_sdk_5_20_00_52/source/ti/drivers/PIN.h:
+
+C:/Workspace_IA_YAB_LSD/simple_peripheral_CC26X2R1_LAUNCHXL_tirtos_ccs/TacheADC/TacheADC.h:
+
+C:/Workspace_IA_YAB_LSD/simple_peripheral_CC26X2R1_LAUNCHXL_tirtos_ccs/TacheLCD/TacheLCD.h:
 
