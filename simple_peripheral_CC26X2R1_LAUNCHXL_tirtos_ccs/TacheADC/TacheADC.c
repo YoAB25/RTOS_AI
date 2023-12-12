@@ -17,6 +17,7 @@
 #include <TacheADC/TacheADC.h>
 #include <TacheLCD/TacheLCD.h>
 #include <Filters/Filter.h>
+#include <TacheFFTClassification/TacheFFTClassification.h>
 
 /* Driver Header files */
 #include <ti/drivers/ADC.h>
@@ -112,7 +113,7 @@ void TacheADC_taskFxn(UArg a0, UArg a1){
         indexFFT++;
         if(indexFFT>=FFT_WINDOW_SIZE){
             // On lance la tache de calcul de la FFT et classification
-            // FFTClassificationTrigger(SerieNormeAccel);
+            FFTClassificationTrigger(SerieNormeAccel);
             //Le resultat est recupere dans DataYFFT
             indexFFT = 0;
         }

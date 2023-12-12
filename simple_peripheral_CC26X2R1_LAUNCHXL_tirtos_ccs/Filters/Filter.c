@@ -23,9 +23,9 @@ void InitOrder1LPFilterEuler(Order1Filter* filter, float freqCoupure, float freq
 void InitOrder1HPFilterEuler(Order1Filter* filter, float freqCoupure, float freqSampling){
     float Tau = 1/freqCoupure;
     float Te = 1/freqSampling;
-    filter->alpha1 = 1-(Te/(Te+Tau));
-    filter->beta0 = Te/(Te+Tau);
-    filter->beta1 = -Tau/(Te+Tau);
+    filter->alpha1 = 1-(Te/Tau);
+    filter->beta0 = 1;
+    filter->beta1 = -1;
 
     filter->s1 = 0;
     filter->reset = 1; //Demande un reset de l'entrée à la prochaine itération

@@ -183,6 +183,7 @@ TacheADC/TacheADC.obj: C:/ti/simplelink_cc13x2_26x2_sdk_5_20_00_52/kernel/tirtos
 TacheADC/TacheADC.obj: C:/Workspace_IA_YAB_LSD/simple_peripheral_CC26X2R1_LAUNCHXL_tirtos_ccs/TacheADC/TacheADC.h
 TacheADC/TacheADC.obj: C:/Workspace_IA_YAB_LSD/simple_peripheral_CC26X2R1_LAUNCHXL_tirtos_ccs/TacheLCD/TacheLCD.h
 TacheADC/TacheADC.obj: C:/Workspace_IA_YAB_LSD/simple_peripheral_CC26X2R1_LAUNCHXL_tirtos_ccs/Filters/Filter.h
+TacheADC/TacheADC.obj: C:/Workspace_IA_YAB_LSD/simple_peripheral_CC26X2R1_LAUNCHXL_tirtos_ccs/TacheFFTClassification/TacheFFTClassification.h
 TacheADC/TacheADC.obj: C:/ti/simplelink_cc13x2_26x2_sdk_5_20_00_52/source/ti/drivers/ADC.h
 TacheADC/TacheADC.obj: C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdbool.h
 TacheADC/TacheADC.obj: syscfg/ti_drivers_config.h
@@ -554,6 +555,8 @@ C:/Workspace_IA_YAB_LSD/simple_peripheral_CC26X2R1_LAUNCHXL_tirtos_ccs/TacheADC/
 C:/Workspace_IA_YAB_LSD/simple_peripheral_CC26X2R1_LAUNCHXL_tirtos_ccs/TacheLCD/TacheLCD.h:
 
 C:/Workspace_IA_YAB_LSD/simple_peripheral_CC26X2R1_LAUNCHXL_tirtos_ccs/Filters/Filter.h:
+
+C:/Workspace_IA_YAB_LSD/simple_peripheral_CC26X2R1_LAUNCHXL_tirtos_ccs/TacheFFTClassification/TacheFFTClassification.h:
 
 C:/ti/simplelink_cc13x2_26x2_sdk_5_20_00_52/source/ti/drivers/ADC.h:
 

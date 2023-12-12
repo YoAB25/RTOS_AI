@@ -1,0 +1,9 @@
+#ifndef TACHEFE_ALGORITHMS_FILTER_H_
+#define TACHEFE_ALGORITHMS_FILTER_H_
+
+
+void TacheFFTClassification_CreateTask(void);
+static void TacheFFTClassification_taskFxn(UArg a0, UArg a1);
+
+
+#endif /*TACHEFE_ALGORITHMS_FILTER_H_*/
