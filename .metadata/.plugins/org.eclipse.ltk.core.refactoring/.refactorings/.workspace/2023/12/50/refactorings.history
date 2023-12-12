@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;simple_peripheral_CC26X2R1_LAUNCHXL_tirtos_ccs/FFTPeak&apos;" deleteContents="false" description="Delete resource &apos;simple_peripheral_CC26X2R1_LAUNCHXL_tirtos_ccs/FFTPeak&apos;" element1="/simple_peripheral_CC26X2R1_LAUNCHXL_tirtos_ccs/FFTPeak" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1702396260019"/>
+</session>

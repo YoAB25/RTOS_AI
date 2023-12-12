@@ -180,6 +180,12 @@ TacheFFTClassification/TacheFFTClassification.obj: C:/ti/simplelink_cc13x2_26x2_
 TacheFFTClassification/TacheFFTClassification.obj: C:/ti/simplelink_cc13x2_26x2_sdk_5_20_00_52/source/ti/drivers/PIN.h
 TacheFFTClassification/TacheFFTClassification.obj: C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdbool.h
 TacheFFTClassification/TacheFFTClassification.obj: ../TacheFFTClassification/TacheFFTClassification.h
+TacheFFTClassification/TacheFFTClassification.obj: C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/math.h
+TacheFFTClassification/TacheFFTClassification.obj: C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/_defs.h
+TacheFFTClassification/TacheFFTClassification.obj: C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/machine/_limits.h
+TacheFFTClassification/TacheFFTClassification.obj: ../TacheFFTClassification/fft.h
+TacheFFTClassification/TacheFFTClassification.obj: ../TacheFFTClassification/PeakDetector.h
+TacheFFTClassification/TacheFFTClassification.obj: C:/Workspace_IA_YAB_LSD/simple_peripheral_CC26X2R1_LAUNCHXL_tirtos_ccs/TacheLCD/TacheLCD.h
 
 ../TacheFFTClassification/TacheFFTClassification.c:
 
@@ -540,4 +546,16 @@ C:/ti/simplelink_cc13x2_26x2_sdk_5_20_00_52/source/ti/drivers/PIN.h:
 C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdbool.h:
 
 ../TacheFFTClassification/TacheFFTClassification.h:
+
+C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/math.h:
+
+C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/_defs.h:
+
+C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/machine/_limits.h:
+
+../TacheFFTClassification/fft.h:
+
+../TacheFFTClassification/PeakDetector.h:
+
+C:/Workspace_IA_YAB_LSD/simple_peripheral_CC26X2R1_LAUNCHXL_tirtos_ccs/TacheLCD/TacheLCD.h:
 

@@ -6,8 +6,9 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="SerieNormeAccel"/>
+		<item key="selection" value="FFTDataY"/>
 		<list key="findhistory">
+			<item value="FFTDataY"/>
 			<item value="SerieNormeAccel"/>
 			<item value="FFTClassificationTrigger"/>
 			<item value="xG"/>
@@ -22,7 +23,6 @@
 			<item value="myClock"/>
 			<item value="TacheADCStack"/>
 			<item value="SimplePeripheral"/>
-			<item value="simple"/>
 		</list>
 		<list key="replacehistory">
 		</list>
